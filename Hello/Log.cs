@@ -27,6 +27,6 @@ namespace Hello
         internal static void LogMethodCall(TraceLevel level, string name, IEnumerable<object> args) => LogMsg(level, name, args, "called");
 
         private static void LogMsg(TraceLevel level, string name, IEnumerable<object> args, object msg) =>
-            Console.WriteLine("[{0}] {1}({2}) {3}.", level, name, args.Aggregate((a, b) => string.Format("{0}, {1}", a, b)), msg);
+            Console.WriteLine("[{0}] {1}({2}) {3}.", level, name, args.Aggregate((a, b) => $"{a}, {b}"), msg);
     }
 }
